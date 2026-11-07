@@ -1,0 +1,26 @@
+{
+  "name": "dsh-bus",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Cross-session message bus for local DSH sessions. Two lanes: chat (real-time, wakes the idle peer and budgets by real token spend) and digest (relay queue for weekly/monthly summaries). Tools: bus_send / bus_wait / bus_read / bus_peers / bus_budget. 支持已读回执、幂等发送、可配置额度与保留期。",
+  "keywords": ["dsh", "dsh-plugin", "agent", "multi-agent", "message-bus", "sessions"],
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "bus.example.json",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

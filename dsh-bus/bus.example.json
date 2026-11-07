@@ -1,0 +1,11 @@
+{
+  "chatDailyYuan": 2,
+  "maxBody": 2000,
+  "digestMaxSent": 30,
+  "chatMaxSent": 200,
+  "defaultWait": 60,
+  "wakeMaxPerDay": 30,
+  "wakeMinGapMs": 8000,
+  "retentionDays": 30,
+  "scope": "turn"
+}

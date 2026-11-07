@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "会话总线",
+    "description": "让同一台电脑上的多个会话直接收发消息：bus_send / bus_wait / bus_read / bus_peers。"
+  }
+}

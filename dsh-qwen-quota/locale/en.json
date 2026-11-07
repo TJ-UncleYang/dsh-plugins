@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "Qwen plan quota",
+    "description": "Shows the remaining monthly quota, reset time and plan status of the Qwen Token Plan below the composer."
+  },
+  "quota": {
+    "label": "Qwen quota",
+    "remaining": "{percent}% left",
+    "reset": "resets {date}",
+    "plan": "{plan} plan",
+    "loading": "reading",
+    "offline": "quota unavailable",
+    "retry": "retry",
+    "hint": "click to refresh now"
+  }
+}

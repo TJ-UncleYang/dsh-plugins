@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Local Memory",
+    "description": "Cross-session memory store backed by facts.jsonl with a rebuildable full-text index."
+  }
+}

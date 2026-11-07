@@ -1,0 +1,3 @@
+- insert:
+    - id: qwen-quota
+      name: dsh-qwen-quota

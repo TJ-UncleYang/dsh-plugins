@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "本地记忆",
+    "description": "以 facts.jsonl 为真相、可随时重建索引的跨会话记忆库。"
+  }
+}

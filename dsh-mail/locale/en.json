@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Mail Sender",
+    "description": "Send plain-text email through the workspace's configured SMTP account."
+  }
+}

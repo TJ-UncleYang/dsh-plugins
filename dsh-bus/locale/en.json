@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Bus",
+    "description": "Direct messaging between local DSH sessions: bus_send / bus_wait / bus_read / bus_peers."
+  }
+}
