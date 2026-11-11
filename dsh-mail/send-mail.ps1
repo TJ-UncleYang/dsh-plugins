@@ -4,12 +4,23 @@ param(
   [string]$Body = 'Test mail from DeepSeek Harness.',
   [string]$SubjectFile = '',
   [string]$BodyFile = '',
-  [string]$SecretFile = (Join-Path $HOME '.mail-secret.txt'),
+  [string]$SecretFile = '',
   [int]$Port = 587,
   [string[]]$AttachFile = @()
 )
 
 $ErrorActionPreference = 'Stop'
+
+# Secret file location: golden copy is on D: drive, but $HOME is C:\Users\86137.
+# Old code hard-wired (Join-Path $HOME '.mail-secret.txt') and drifted to C:, same
+# root cause as the 9222 C/D profile drift. Probe candidates; do not hard-wire a drive.
+if ($SecretFile -eq '') {
+  $candidates = @()
+  if ($env:DSH_MAIL_SECRET) { $candidates += $env:DSH_MAIL_SECRET }
+  $candidates += 'D:\Users\86137\.mail-secret.txt'
+  $candidates += (Join-Path $HOME '.mail-secret.txt')
+  foreach ($p in $candidates) { if ($p -and (Test-Path -LiteralPath $p)) { $SecretFile = $p; break } }
+}
 
 if ($SubjectFile -ne '') { $Subject = [System.IO.File]::ReadAllText($SubjectFile, [System.Text.Encoding]::UTF8) }
 if ($BodyFile -ne '') { $Body = [System.IO.File]::ReadAllText($BodyFile, [System.Text.Encoding]::UTF8) }

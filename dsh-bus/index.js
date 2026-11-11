@@ -412,7 +412,7 @@ function send(args, me, exec, ctx) {
     if (channel === 'chat') {
       if (Number(row.yuan || 0) >= CHAT_DAILY_YUAN) {
         throw new Error(
-          `今日聊天额度已用完（¥${fmt(row.yuan)} / ¥${fmt(CHAT_DAILY_YUAN)}）。明天 00:00 重置；要提前解封请让杨金明改 DSH_BUS_DAILY_YUAN。`,
+          `今日聊天额度已用完（¥${fmt(row.yuan)} / ¥${fmt(CHAT_DAILY_YUAN)}）。明天 00:00 重置；要提前解封请调整 DSH_BUS_DAILY_YUAN 配置。`,
         )
       }
       if (sent >= CHAT_MAX_SENT) throw new Error(`今天 chat 消息已到 ${CHAT_MAX_SENT} 条上限，请收尾`)
